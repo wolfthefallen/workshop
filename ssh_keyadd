@@ -1,0 +1,6 @@
+#!/bin/bash
+# add your ssh key to your ssh agent
+# by wolfthefallen
+ssh-agent -s
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
