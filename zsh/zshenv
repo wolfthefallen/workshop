@@ -1,0 +1,37 @@
+#
+# /etc/zshenv is sourced on all invocations of the shell, unless
+# the -f option is set.  It should contain commands to set the
+# command search path, plus other important environment variables.
+# zshenv should not contain commands that produce output or assume
+# that the shell is attached to a tty.
+#
+
+export EDITOR="nano"
+export HISTFILE="$HOME/.zsh-history"
+export HISTSIZE=2000
+export JAVA_HOME=$(alternatives --list | awk '/^java.*[0-9]$/ {print substr($0, index($0, $3))}' | head -n1 | sed 's:/bin/java::g')
+export PATH=$PATH:/usr/local/sbin
+export PS_FORMAT=pid,ppid,user,group,tty,time,cmd
+export PYTHONDONTWRITEBYTECODE=x
+export PYTHONSTARTUP=$HOME/.pystartup
+export SAVEHIST=$HISTSIZE
+export WORKSHOP_CONFIG="$HOME/.workshop_config.yml"
+
+# defined here so it can be used in scripts
+alias workshop-config="python -m smoke_zephyr.configuration $WORKSHOP_CONFIG $1"
+
+function print_error() {
+	echo "$fg_bold[red][-]$reset_color $1"
+}
+
+function print_good() {
+	echo "$fg_bold[green][+]$reset_color $1"
+}
+
+function print_status() {
+	echo "$fg_bold[blue][*]$reset_color $1"
+}
+
+function print_warning() {
+	echo "$fg_bold[yellow][*]$reset_color $1"
+}
