@@ -1,6 +1,7 @@
 [user]
 	email = fallenwolf@wolfthefallen.com
 	name = wolfthefallen
+	signingkey = fallenwolf@wolfthefallen.com
 [alias]
 	abandon = reset --hard HEAD
 	branch-current = !git branch | awk '/^\\*/ {print $2}'
