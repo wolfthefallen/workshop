@@ -14,9 +14,9 @@ if [[ -d /etc/zsh ]]; then
 	fi
 elif [[ -f /etc/zshenv ]]; then
 	if [[ -w /etc/zshenv ]]; then
-			cp ./zsh/zshenv /etc/zsh/zshenv
-			cp ./zsh/zshrc /etc/zsh/zshrc
-			cp ./zsh/zshrc-profile $HOME/.zshrc
+			cp ./zsh/zshenv /etc/zshenv/zshenv
+			cp ./zsh/zshrc /etc/zshenv/zshrc
+			cp ./zsh/zshrc_profile_default $HOME/.zshrc
 	else print "no write access please run as root"
 	fi
 fi
