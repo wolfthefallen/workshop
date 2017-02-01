@@ -19,6 +19,7 @@
 	stash-unstaged = stash --keep-index
 	ls = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --date=short
 	unadd = reset HEAD
+	update-pr = !"f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1; }; f"
 
 [color]
 	ui = true
