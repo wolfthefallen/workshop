@@ -9,3 +9,5 @@ General Use Files, Configs.
 Zsh profile and git profile from [zeroSteiner](https://github.com/zeroSteiner/workshop)
 
 Thank you zeroSteiner for getting me addicted to zsh
+
+[raw readme](https://raw.githubusercontent.com/wolfthefallen/workshop/master/README.md)
